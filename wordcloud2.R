@@ -25,3 +25,37 @@ textdata = textdata[!is.na(textdata)]
 names(textdata) = NULL
 
 
+maxpage <- 112
+mrange <- 50000
+
+for(i in 0:maxpage) {
+  req = paste("select \"number \", brief_description, open_time from f.table offset ", i, "rows fetch next", mrange, "rows only", sep= " ")
+  print(req)
+}
+
+a <- c(rep("A", 3), rep("B", 3), rep("C",2),rep("A", 3), rep("B", 3), rep("C",2))
+b <- c(1,1,2,4,1,1,2,2)
+df <-data.frame(a,b)
+
+duplicated(df)
+# [1] FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE
+
+df[duplicated(df), ]
+# a b
+# 2 A 1
+# 6 B 1
+# 8 C 2
+
+df[!duplicated(df), ]
+# a b
+# 1 A 1
+# 3 A 2
+# 4 B 4
+# 5 B 1
+# 7 C 2
+
+d.f <- data.frame(rating = c("AAA", "A", "A", "AAA", 
+                             "BB", "BB", "AAA", "A"))
+i <- 1
+by <- d.f$rating
+sub.data.frame <- d.f[by == unique(by)[i], ]
