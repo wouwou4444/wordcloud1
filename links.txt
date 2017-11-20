@@ -10,3 +10,14 @@ https://www.r-bloggers.com/intro-to-text-analysis-with-r/
 https://www.datacamp.com/community/tutorials/recreate-bloomberg-terminal-news-trends-r?tap_a=5644-dce66f&tap_s=10907-287229#gs.31Bv77Y
 
 https://www.datacamp.com/
+
+http://www.dummies.com/programming/r/how-to-repeat-vectors-in-r/
+
+https://www.statmethods.net/management/subset.html
+
+https://www.statmethods.net/management/reshape.html
+
+https://www.statmethods.net/management/aggregate.html
+
+https://rawgit.com/wiki/Rdatatable/data.table/vignettes/datatable-keys-fast-subset.html
+

@@ -59,3 +59,37 @@ d.f <- data.frame(rating = c("AAA", "A", "A", "AAA",
 i <- 1
 by <- d.f$rating
 sub.data.frame <- d.f[by == unique(by)[i], ]
+
+
+values <- data.frame(value = c("a", "a", "a", "a", "a", 
+                               "b", "b", "b", 
+                               "c", "c", "c", "c"))
+nr.of.appearances <- aggregate(x = values, 
+                               by = list(unique.values = values$value), 
+                               FUN = length)
+##############
+dates <- data.frame(date = as.Date("2001-01-01", format = "%Y-%m-%d") + 0:729)
+dates
+last.day <- aggregate(x = dates["date"], 
+                      by = list(month = substr(dates$date, 1, 7)), 
+                      FUN = max)
+
+
+##############
+assets <- data.frame(asset.class = c("equity", "equity","equity",
+                                     "option","option","option",
+                                     "bond", "bond"),
+                     rating = c("AAA", "A", "A", "AAA", 
+                                "BB", "BB", "AAA", "A"),
+                     counterparty.a = c(runif(3), rnorm(5)),
+                     counterparty.b = c(runif(3), rnorm(5)),
+                     counterparty.c = c(runif(3), rnorm(5)))
+assets
+exposures <- aggregate(x = assets[c("counterparty.a", 
+                                    "counterparty.b",
+                                    "counterparty.c")],
+                       by = assets[c("asset.class", "rating")],
+                       FUN = function(market.values){
+                         sum(pmax(market.values, 0))
+                       })
+exposures
