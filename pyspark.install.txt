@@ -1,0 +1,18 @@
+E:\Program Files (x86)\Microsoft Visual Studio\2017\Community>pip install pyspark
+Collecting pyspark
+Downloading pyspark-2.2.0.post0.tar.gz (188.3MB)
+100% |################################| 188.3MB 4.6kB/s
+  Collecting py4j==0.10.4 (from pyspark)
+Downloading py4j-0.10.4-py2.py3-none-any.whl (186kB)
+100% |################################| 194kB 2.6MB/s
+  Building wheels for collected packages: pyspark
+Running setup.py bdist_wheel for pyspark ... done
+Stored in directory: C:\Users\valer_3w0bq3q\AppData\Local\pip\Cache\wheels\5f\0b\b3\5cb16b15d28dcc32f8e7ec91a044829642874bb7586f6e6cbe
+Successfully built pyspark
+Installing collected packages: py4j, pyspark
+Successfully installed py4j-0.10.4 pyspark-2.2.0
+
+E:\Program Files (x86)\Microsoft Visual Studio\2017\Community>which pip
+/e/Program Files/Anaconda3/Scripts/pip
+
+
