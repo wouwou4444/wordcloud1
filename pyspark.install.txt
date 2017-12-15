@@ -15,4 +15,8 @@ Successfully installed py4j-0.10.4 pyspark-2.2.0
 E:\Program Files (x86)\Microsoft Visual Studio\2017\Community>which pip
 /e/Program Files/Anaconda3/Scripts/pip
 
+set PYTHONIOENCODING="cp855"
+
+
+
 
