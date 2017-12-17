@@ -10,7 +10,7 @@ import re
 
 
 from pyspark import SparkContext
-
+sc.stop()
 sc = SparkContext("local", "Simple App")
 
 print(sc)
@@ -65,6 +65,7 @@ while True:
             print("Found: ", (new_distances.filter(lambda i:i[0] == dest ).map(lambda i:i[1][1]).collect()))
             #print(found_item.map(lambda i:i[1][1:]).flatMap(lambda l: [item for sublist in l for item in sublist]).collect())
             print(found_item.map(lambda i:i[1][1]).flatMap(lambda l: [item for item in l]).collect())
+            found_item.map(lambda i:i[1][1]).flatMap(lambda l: [item for item in l]).foreach(print)
             break
         if d == 2:
             break
